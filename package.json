@@ -28,5 +28,11 @@
 		"vite": "^4.2.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"animejs": "^3.2.1",
+		"apexcharts": "^3.39.0",
+		"svelte-apexcharts": "^1.0.2",
+		"svelte-inview": "^4.0.0"
+	}
 }
