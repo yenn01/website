@@ -25,15 +25,15 @@
             targets: '#moving',
             top: 0,
             left: 0,
-            translateX: "0%",
-            translateY: "0%",
+            translateX: "-15%",
+            translateY: "-15%",
             duration: 10000,
             autoplay:false,
             easing:"easeInOutCubic",
         })
         resizeLogo = anime({
             targets:'#cont_logo',
-            scale: 0.7,
+            scale: 0.5,
             duration: 10000,
             autoplay:false,
             easing:"easeInOutCubic",
@@ -110,12 +110,14 @@
         top:50vh;
         left:50vw;
         transform: translate(-50%, -50%);
+        z-index: 2000;
 	}
 
     #cont_logo {
         display: flex;
 		flex-direction:row;
         flex:1; 
+        
     }
 
     section h1 {

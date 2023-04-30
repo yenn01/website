@@ -83,12 +83,15 @@
 <style>
     #contHeader {
         opacity:0;
+        
     }
 
     #headerLogo {
-        top:0;
+        top:10px;
         left:0;
-        height:5.6rem;
+        width:90px;
+        height:65px;
+        position:absolute;
     }
 
     .showLogo {
@@ -101,14 +104,16 @@
 
 	header {
 		display: flex;
-		
-        width:95%;
+		height:64px;
+        width:100%;
         position:fixed;
         top:0;
-        padding-top:4vh;
+        padding-top:3vh;
         font-family: 'Montserrat';
         font-size: 1.3rem;
-        background-color: var(--color-bg-0);
+        background-color: #f5f3e8;
+        z-index:100;
+        filter: drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06)); 
         
 	}
 
@@ -120,21 +125,27 @@
 
 	nav {
 		display: flex;
-        width:30%;
+        width:100%;
 		justify-content: center;
+        align-items: flex-end;
+
 	}
+
+
+        
+
 
 	ul {
 		position: relative;
 		padding: 0;
 		margin: 0;
 		height: 4vh;
-        width:100%;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		list-style: none;
 		background-size: contain;
+        
 	}
 
 	li {
