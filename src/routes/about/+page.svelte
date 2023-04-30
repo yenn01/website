@@ -3,10 +3,12 @@ import { onMount } from "svelte";
 import { NameSection, SkillsSection } from "$lib/components";
 
 import {store_showHeader,store_showHeaderLogo} from '$lib/stores/showHeader.js'
-
+	
+export let data
 onMount(() => {
     $store_showHeader = 9999;
     $store_showHeaderLogo = true;
+    console.log($store_showHeader)
 })
 
 
@@ -19,6 +21,7 @@ onMount(() => {
         margin-top: 10%;
         flex-direction: column;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
 
@@ -34,6 +37,6 @@ onMount(() => {
 <div class="cont-about">
     <div class="top-displacer"></div>
     <NameSection></NameSection>
-    <SkillsSection></SkillsSection>
+    <SkillsSection skillLevelData={data.body}></SkillsSection>
     <div class="cont-philosophy"></div>
 </div>

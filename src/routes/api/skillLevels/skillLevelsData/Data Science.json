@@ -1,0 +1,11 @@
+{
+    "3": {
+        "skills":"Scikit-learn, Pandas, Jupyter Notebook, gspread, pytesseract"
+    },
+    "2": {
+        "skills":"HuggingFace, Numpy, BeautifulSoup, streamlit"
+    },
+    "1": {
+        "skills":"Seaborn, Matplotlib, opencv-python"
+    }
+}

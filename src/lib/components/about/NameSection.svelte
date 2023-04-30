@@ -28,7 +28,7 @@ import { Appear } from "$lib/components"
       },
     ],
     xaxis: {
-      categories: ['Data Science','Web Dev','Writing','Graphic Designing','Blockchain'],
+      categories: ['Data Science','Web Dev','Writing','Graphic','Blockchain'],
       labels: {
         style: {
             fontSize: "18px",
@@ -41,7 +41,12 @@ import { Appear } from "$lib/components"
     yaxis: {
         tickAmount: 5,
         min:0,
-        max:10,        
+        max:10,     
+        labels: {
+            style:{
+                colors:["#949494","#949494","#949494","#949494","#949494","#949494"],
+            }
+        }   
     }
   };
 
@@ -55,39 +60,43 @@ import { Appear } from "$lib/components"
 </script>
 
 
-<Appear 
-stylings="display:flex;
-          "
-                        >
-    <div class="graph-holder">
-        <!-- <div use:chart={g_options}/> -->
-        <div bind:this = {container}></div>
+<!-- <Appear  -->
+   <div class="cont-name">
+        <div class="graph-holder">
+            <!-- <div use:chart={g_options}/> -->
+            <div bind:this = {container}></div>
+        </div>
+        <div class="name-holder">
+            <h1 style="margin-bot:0;">Yenn Miing</h1>
+            <h2 style="margin-top:0;">Ooi</h2>
+            <p>Hi there, I am a data scientist 👨‍💻 with experience in web development &#40;mostly Svelte&#41;.
+                I ❤️ learning and have picked up a versatile skillset including graphic designing, basic video editing, CAD and writing.            
+            </p>
+            <p>Passionate about <i>Blockchain</i>, <i>Artificial Intelligence</i>, <i>Machine Learning</i>, <i>Fintech</i>, <i>Coffee</i> ☕, <i>Food</i> 🍜 and <i>Mechanical Keyboards</i> ⌨️.</p>
+        </div>
+<!-- </Appear> -->
     </div>
-    <div class="name-holder">
-        <h1 style="margin-bot:0;">Yenn Miing</h1>
-        <h2 style="margin-top:0;">Ooi</h2>
-        <p>Hi there, I am a data scientist 👨‍💻 with experience in web development &#40;mostly Svelte&#41;.
-            I ❤️ learning and have picked up a versatile skillset including graphic designing, basic video editing, CAD and writing.            
-        </p>
-        <p>Passionate about <i>Blockchain</i>, <i>Artificial Intelligence</i>, <i>Machine Learning</i>, <i>Fintech</i>, <i>Coffee</i> ☕, <i>Food</i> 🍜 and <i>Mechanical Keyboards</i> ⌨️.</p>
-    </div>
-</Appear>
-
 
 
 <style>
-
+    .cont-name {
+        display:flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
 
     .name-holder {
-        flex-grow:1;
-
+        flex-grow:16;
+        flex-shrink: 2;
+        flex-basis: 400px
     }
 
     .graph-holder {
-        flex-grow: 3;
+
+        flex-grow: 8;
         flex-shrink: 0;
-        flex-basis:600px;
+        flex-basis:592px;
     }
 
     p {
@@ -96,11 +105,12 @@ stylings="display:flex;
     }
 
     h1 {
-        font-size: 6rem;
+        font-size: 5.5rem;
         font-family: 'Inter';
         /* text-transform: uppercase; */
         text-align: right;
         margin-bottom: 0;
+        margin-top:0;
     }
 
     h2 {
