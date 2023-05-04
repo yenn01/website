@@ -1,6 +1,7 @@
 <script>
 import { onMount } from "svelte";
 import { Appear } from "$lib/components"
+import TitleDividerComp from "./TitleDividerComp.svelte";
 // import { chart } from "svelte-apexcharts";
 
   let g_options = {
@@ -61,6 +62,8 @@ import { Appear } from "$lib/components"
 
 
 <!-- <Appear  -->
+    
+    <TitleDividerComp text = {"01 Intro"}></TitleDividerComp>
    <div class="cont-name">
         <div class="graph-holder">
             <!-- <div use:chart={g_options}/> -->
@@ -70,7 +73,7 @@ import { Appear } from "$lib/components"
             <h1 style="margin-bot:0;">Yenn Miing</h1>
             <h2 style="margin-top:0;">Ooi</h2>
             <p>Hi there, I am a data scientist 👨‍💻 with experience in web development &#40;mostly Svelte&#41;.
-                I ❤️ learning and have picked up a versatile skillset including graphic designing, basic video editing, CAD and writing.            
+                I enjoy learning and have picked up a versatile skillset including graphic designing, basic video editing, CAD and writing.            
             </p>
             <p>Passionate about <i>Blockchain</i>, <i>Artificial Intelligence</i>, <i>Machine Learning</i>, <i>Fintech</i>, <i>Coffee</i> ☕, <i>Food</i> 🍜 and <i>Mechanical Keyboards</i> ⌨️.</p>
         </div>
@@ -83,13 +86,16 @@ import { Appear } from "$lib/components"
         display:flex;
         flex-wrap: wrap;
         justify-content: center;
+        /*Add media control to change to row reverse when screen small*/
     }
+
 
 
     .name-holder {
         flex-grow:16;
         flex-shrink: 2;
-        flex-basis: 400px
+        flex-basis: 400px;
+        margin-bottom: 1rem;
     }
 
     .graph-holder {

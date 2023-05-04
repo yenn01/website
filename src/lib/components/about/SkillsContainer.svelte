@@ -32,6 +32,7 @@
         
         border-right: 1px solid gray;
         border-bottom: 1px solid gray;
+        border-radius: 0 0 4% 0;
         
     }
 
