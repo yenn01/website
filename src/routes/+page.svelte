@@ -25,15 +25,15 @@
             targets: '#moving',
             top: 0,
             left: 0,
-            translateX: "-15%",
-            translateY: "-15%",
+            translateX: "-24%",
+            translateY: "-24%",
             duration: 10000,
             autoplay:false,
             easing:"easeInOutCubic",
         })
         resizeLogo = anime({
             targets:'#cont_logo',
-            scale: 0.5,
+            scale: 0.35,
             duration: 10000,
             autoplay:false,
             easing:"easeInOutCubic",

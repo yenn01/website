@@ -90,7 +90,7 @@
         top:10px;
         left:0;
         width:90px;
-        height:65px;
+        height:40px;
         position:absolute;
     }
 
@@ -104,7 +104,7 @@
 
 	header {
 		display: flex;
-		height:64px;
+		height:25px;
         width:100%;
         position:fixed;
         top:0;
