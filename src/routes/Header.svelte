@@ -104,7 +104,7 @@
 
 	header {
 		display: flex;
-		height:25px;
+		height:32px;
         width:100%;
         position:fixed;
         top:0;

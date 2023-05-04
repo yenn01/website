@@ -26,7 +26,7 @@ onMount(() => {
 
 
     .top-displacer {
-        height:10vh;
+        height:2vh;
     }
 
 
@@ -38,5 +38,6 @@ onMount(() => {
     <div class="top-displacer"></div>
     <NameSection></NameSection>
     <SkillsSection skillLevelData={data.body}></SkillsSection>
+
     <div class="cont-philosophy"></div>
 </div>
