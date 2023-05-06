@@ -1,11 +1,11 @@
 {
     "3": {
-        "skills":"Python, Svelte, Sveltekit, Java, Javascript, HTML, CSS"
+        "skills":"Svelte, Sveltekit"
     },
     "2": {
-        "skills":"Solidity, Arduino, SQL, C#, C, ASP.NET, Git, anime.js, Flask, streamlit, Firebase, Regex, Bootstrap"
+        "skills":"Git, anime.js, Flask, streamlit, Firebase, Bootstrap"
     },
     "1": {
-        "skills":"Batch, AutoHotkeyScript, Redis, Smartweave, Kotlin, Node.js"
+        "skills":"Redis, Smartweave, Kotlin, Node.js, PostCSS, apexcharts.js"
     }
 }
