@@ -1,6 +1,13 @@
-export async function load({fetch}) {
-    const res = await fetch(`/api/skillLevels`)
+export async function load({ fetch }) {
+	const res = await fetch(`/api/skillLevels`).then((r) => r.json());
+	console.log(res);
 
-    //console.log(values)
-    return   res.json()
+	const res2 = await fetch(`/api/aboutWidgets`).then((r) => r.json());
+
+	console.log(res2);
+
+	return {
+		sl: res,
+		a_widgets: res2
+	};
 }
