@@ -1,139 +1,148 @@
 <script>
 	import { page } from '$app/stores';
-    import { onMount } from 'svelte';
-    import anime from 'animejs'
-    import { fade, draw, fly } from 'svelte/transition';
-    import {store_showHeader,store_showHeaderLogo} from '$lib/stores/showHeader.js'
+	import { onMount } from 'svelte';
+	import anime from 'animejs';
+	import { fade, draw, fly } from 'svelte/transition';
+	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
 	// import logo from '$lib/images/svelte-logo.svg';
 	// import github from '$lib/images/github.svg';
 
-     /**
+	/**
 	 * @type {{ seek?: any; duration?: any; }}
 	 */
-     let animHeader;
-     let y=0;
-     let ch = 0;
-     let justifyClass = ""
-     onMount(()=> {
+	let animHeader;
+	let y = 0;
+	let ch = 0;
+	let justifyClass = '';
+	onMount(() => {
+		animHeader = anime({
+			targets: '#contHeader',
+			opacity: 1,
+			duration: 10000,
+			autoplay: false,
+			easing: 'easeInOutCubic'
+		});
+	});
 
-        animHeader = anime({
-            targets: '#contHeader',
-            opacity: 1,
-            duration: 10000,            
-            autoplay:false,
-            easing:"easeInOutCubic",
-        })
+	function toggleHeader() {
+		if (animHeader != undefined) {
+			console.log('Trieds');
+			animHeader.seek(($store_showHeader / ch) * animHeader.duration);
+		}
+		if ($store_showHeaderLogo === true) {
+			justifyClass = 'showLogo';
+		} else if ($store_showHeaderLogo === false) {
+			justifyClass = 'hideLogo';
+		}
+	}
 
+	function toggleLogo() {}
 
-        
-            
-    })
-
-    function toggleHeader() {
-        if (animHeader != undefined) {
-            console.log("Trieds")
-            animHeader.seek($store_showHeader / ch * animHeader.duration)
-        }        
-        if($store_showHeaderLogo === true) {
-            justifyClass = 'showLogo'
-        } else if ($store_showHeaderLogo === false) {
-            justifyClass = 'hideLogo'
-        }
-    }
-
-    function toggleLogo() {
-        
-    }
-
-    $: $store_showHeaderLogo, toggleLogo()
-    $: $store_showHeader, toggleHeader() 
-    
-
-   
-
+	$: $store_showHeaderLogo, toggleLogo();
+	$: $store_showHeader, toggleHeader();
 </script>
-<svelte:window bind:innerHeight={ch}/>
 
-<header id="contHeader" class="{justifyClass}" transition:fade>
-    {#if $store_showHeaderLogo == true}
-        <svg id="headerLogo" version="1.1" viewBox="0 0 108.78 190.52" xmlns="http://www.w3.org/2000/svg" transition:fade>
-            <g transform="translate(-51.078 -54.024)">
-                <path d="m52.228 56.739v32.437l36.162 35.036-36.162 35.036v32.436l52.902 51.254 52.902-51.254v-32.436l-52.902 51.254-9.4868-9.1912 63.07-61.104v-32.437l-52.902 51.254-26.907 26.068-9.9363-9.6268 89.065-86.29v-32.437l-52.902 51.254z" fill="none" stroke="#000" stroke-width="2.6"/>
-            </g>
-        </svg>   
-    {/if}
+<svelte:window bind:innerHeight={ch} />
+
+<header id="contHeader" class={justifyClass} transition:fade>
+	{#if $store_showHeaderLogo == true}
+		<svg
+			id="headerLogo"
+			version="1.1"
+			viewBox="0 0 108.78 190.52"
+			xmlns="http://www.w3.org/2000/svg"
+			transition:fade
+		>
+			<g transform="translate(-51.078 -54.024)">
+				<path
+					d="m52.228 56.739v32.437l36.162 35.036-36.162 35.036v32.436l52.902 51.254 52.902-51.254v-32.436l-52.902 51.254-9.4868-9.1912 63.07-61.104v-32.437l-52.902 51.254-26.907 26.068-9.9363-9.6268 89.065-86.29v-32.437l-52.902 51.254z"
+					fill="none"
+					stroke="#000"
+					stroke-width="2.6"
+				/>
+			</g>
+		</svg>
+	{/if}
 	<nav>
 		<ul>
 			<li class:active={$page.url.pathname === '/'}>
-				<a href="/" class="header-choice" style=" { $page.url.pathname === '/' ? "border-bottom: 2px solid black;" : ""}">home</a>
+				<a
+					href="/"
+					class="header-choice"
+					style=" {$page.url.pathname === '/' ? 'border-bottom: 2px solid black;' : ''}">home</a
+				>
 			</li>
 			<li class:active={$page.url.pathname === '/about'}>
-				<a href="/about" style=" { $page.url.pathname === '/about' ? "border-bottom: 2px solid black;" : ""}">about</a>
+				<a
+					href="/about"
+					style=" {$page.url.pathname === '/about' ? 'border-bottom: 2px solid black;' : ''}"
+					>about</a
+				>
 			</li>
 			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
-				<a href="/sverdle" style=" { $page.url.pathname === '/posts' ? "border-bottom: 2px solid black;" : ""}">posts</a>
+				<a
+					href="/sverdle"
+					style=" {$page.url.pathname === '/posts' ? 'border-bottom: 2px solid black;' : ''}"
+					>posts</a
+				>
 			</li>
-            <li class:active={$page.url.pathname.startsWith('/sverdle')}>
-				<a href="/sverdle" style=" { $page.url.pathname === '/games' ? "border-bottom: 2px solid black;" : ""}">game</a>
+			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
+				<a
+					href="/sverdle"
+					style=" {$page.url.pathname === '/games' ? 'border-bottom: 2px solid black;' : ''}"
+					>game</a
+				>
 			</li>
 		</ul>
 	</nav>
 </header>
 
 <style>
-    #contHeader {
-        opacity:0;
-        
-    }
+	#contHeader {
+		opacity: 0;
+	}
 
-    #headerLogo {
-        top:10px;
-        left:0;
-        width:90px;
-        height:40px;
-        position:absolute;
-    }
+	#headerLogo {
+		top: 10px;
+		left: 0;
+		width: 90px;
+		height: 40px;
+		position: absolute;
+	}
 
-    .showLogo {
-        justify-content: space-between;
-    }
+	.showLogo {
+		justify-content: space-between;
+	}
 
-    .hideLogo {
-        justify-content: flex-end;
-    }
+	.hideLogo {
+		justify-content: flex-end;
+	}
 
 	header {
 		display: flex;
-		height:32px;
-        width:100%;
-        position:fixed;
-        top:0;
-        padding-top:3vh;
-        font-family: 'Montserrat';
-        font-size: 1.3rem;
-        background-color: #f5f3e8;
-        z-index:100;
-        filter: drop-shadow(0 4px 3px rgba(0,0,0,.07)) drop-shadow(0 2px 2px rgba(0,0,0,.06)); 
-        
+		height: 32px;
+		width: 100%;
+		position: fixed;
+		top: 0;
+		padding-top: 3vh;
+		font-family: 'Montserrat';
+		font-size: 1.3rem;
+		background-color: #f5f3e8;
+		z-index: 100;
+		filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
 	}
 
-    .header-choice {
-        border-bottom: 2px solid transparent;
-        transition : 0.2s;
-    }
-
+	.header-choice {
+		border-bottom: 2px solid transparent;
+		transition: 0.2s;
+	}
 
 	nav {
 		display: flex;
-        width:100%;
+		width: 100%;
 		justify-content: center;
-        align-items: flex-end;
-
+		align-items: flex-end;
 	}
-
-
-        
-
 
 	ul {
 		position: relative;
@@ -145,7 +154,6 @@
 		align-items: center;
 		list-style: none;
 		background-size: contain;
-        
 	}
 
 	li {
@@ -176,7 +184,7 @@
 		text-transform: lowercase;
 		letter-spacing: 0.1em;
 		text-decoration: none;
-        white-space: nowrap;
+		white-space: nowrap;
 		transition: color 0.2s linear;
 	}
 
