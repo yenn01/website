@@ -24,5 +24,6 @@
 		border-bottom: 3px solid black;
 		margin-bottom: 3rem;
 		margin-left: 1rem;
+		margin-top: 2rem;
 	}
 </style>
