@@ -7,7 +7,7 @@
 	export let favouriteBooksData;
 </script>
 
-<TitleDividerComp text={'03 Widgets'} />
+<TitleDividerComp num={'03'} text={'Widgets'} />
 <WidgetHolder>
 	<NowReading {nowReadingData} />
 	<FavouriteBooks {favouriteBooksData} />

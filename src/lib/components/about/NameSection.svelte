@@ -62,7 +62,7 @@
 
 <!-- <Appear  -->
 
-<TitleDividerComp text={'01 Intro'} />
+<TitleDividerComp num={'01'} text={'Intro'} />
 <div class="cont-name">
 	<div class="graph-holder">
 		<!-- <div use:chart={g_options}/> -->
