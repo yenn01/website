@@ -11,7 +11,7 @@
 	<Header />
 
 	{#key data.path}
-		<main transition:fade>
+		<main in:fade={{ duration: 300, delay: 200 }}>
 			<slot />
 		</main>
 	{/key}

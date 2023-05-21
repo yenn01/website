@@ -31,8 +31,12 @@
 		}
 		if ($store_showHeaderLogo === true) {
 			justifyClass = 'showLogo';
+			animHeader.seek(9999);
 		} else if ($store_showHeaderLogo === false) {
 			justifyClass = 'hideLogo';
+			// if (animHeader != undefined) {
+			// animHeader.seek(0);
+			// }
 		}
 	}
 
@@ -44,7 +48,7 @@
 
 <svelte:window bind:innerHeight={ch} />
 
-<header id="contHeader" class={justifyClass} transition:fade>
+<header id="contHeader" class={justifyClass} transition:fade={{ duration: 100 }}>
 	{#if $store_showHeaderLogo == true}
 		<svg
 			id="headerLogo"
