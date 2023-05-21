@@ -1,6 +1,6 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-auto';
-import autoprefixer from 'autoprefixer'
+import adapter from '@sveltejs/adapter-vercel';
+import autoprefixer from 'autoprefixer';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -14,8 +14,8 @@ const config = {
 	preprocess: [
 		preprocess({
 			postcss: {
-                plugins: [autoprefixer()],
-            }
+				plugins: [autoprefixer()]
+			}
 		})
 	]
 };
