@@ -4,7 +4,7 @@
 	console.log(nowReadingData);
 </script>
 
-<BasicWidget widgetTitle={'Now Reading'} widgetEmoji={'📚'}>
+<BasicWidget widgetTitle={'Now Reading'} widgetEmoji={'📖'}>
 	{#each nowReadingData.books as book}
 		<h4><a href={book.link} target="_blank">"{book.title}"</a></h4>
 		<dd>by <i>{book.author}</i></dd>
