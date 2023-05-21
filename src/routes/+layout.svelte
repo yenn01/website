@@ -25,7 +25,6 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		height: 200vh;
 		align-items: center;
 		justify-content: center;
 	}

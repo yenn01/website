@@ -78,37 +78,42 @@
 	on:resize={resize}
 	on:beforeunload={beforeUnload}
 />
-
-<section id="moving">
-	<div id="cont_logo">
-		<svg id="logo" version="1.1" viewBox="0 0 108.78 190.52" xmlns="http://www.w3.org/2000/svg">
-			<g transform="translate(-51.078 -54.024)">
-				<path
-					d="m52.228 56.739v32.437l36.162 35.036-36.162 35.036v32.436l52.902 51.254 52.902-51.254v-32.436l-52.902 51.254-9.4868-9.1912 63.07-61.104v-32.437l-52.902 51.254-26.907 26.068-9.9363-9.6268 89.065-86.29v-32.437l-52.902 51.254z"
-					fill="none"
-					stroke="#000"
-					stroke-width="2.6"
-				/>
-			</g>
-		</svg>
-		<h1 id="logoText">Yenn Miing</h1>
-	</div>
-</section>
-<!-- <button on:click={()=> {y=0}}>Click me try animate</button> -->
-<div class="placementGap" />
-<section class="content">
-	<div class="content_title">
-		<small>Title</small>
-	</div>
-	<div class="content_descrp">
-		<small>Description</small>
-	</div>
-	<div class="content_rp">
-		<h2 class="rp">Recent Posts</h2>
-	</div>
-</section>
+<div class="homeContainer">
+	<section id="moving">
+		<div id="cont_logo">
+			<svg id="logo" version="1.1" viewBox="0 0 108.78 190.52" xmlns="http://www.w3.org/2000/svg">
+				<g transform="translate(-51.078 -54.024)">
+					<path
+						d="m52.228 56.739v32.437l36.162 35.036-36.162 35.036v32.436l52.902 51.254 52.902-51.254v-32.436l-52.902 51.254-9.4868-9.1912 63.07-61.104v-32.437l-52.902 51.254-26.907 26.068-9.9363-9.6268 89.065-86.29v-32.437l-52.902 51.254z"
+						fill="none"
+						stroke="#000"
+						stroke-width="2.6"
+					/>
+				</g>
+			</svg>
+			<h1 id="logoText">Yenn Miing</h1>
+		</div>
+	</section>
+	<!-- <button on:click={()=> {y=0}}>Click me try animate</button> -->
+	<div class="placementGap" />
+	<section class="content">
+		<div class="content_title">
+			<small>Title</small>
+		</div>
+		<div class="content_descrp">
+			<small>Description</small>
+		</div>
+		<div class="content_rp">
+			<h2 class="rp">Recent Posts</h2>
+		</div>
+	</section>
+</div>
 
 <style>
+	.homeContainer {
+		min-height: 200vh;
+	}
+
 	#moving {
 		position: fixed;
 		top: 50vh;
