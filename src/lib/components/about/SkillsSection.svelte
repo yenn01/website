@@ -21,7 +21,7 @@
 	/>
 	<SkillsContainer
 		elementTitle={'Frameworks / Libraries'}
-		elementData={skillLevelData.soft}
+		elementData={skillLevelData.fwl}
 		fillColour={'#FA8686'}
 	/>
 	<SkillsContainer

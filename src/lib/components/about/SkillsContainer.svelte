@@ -35,6 +35,8 @@
 	h4 {
 		font-size: 1.2rem;
 		margin-bottom: 0.7rem;
-		border-bottom: 2px solid gray;
+		margin-top: 0.7em;
+		padding-top: 1em;
+		border-top: 0.1em solid gray;
 	}
 </style>
