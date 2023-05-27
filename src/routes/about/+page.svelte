@@ -4,6 +4,7 @@
 
 	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
 	import WidgetSection from '$lib/components/about/WidgetSection.svelte';
+	import ConceptsSection from '$lib/components/about/ConceptsSection.svelte';
 
 	export let data;
 	onMount(() => {
@@ -23,6 +24,7 @@
 		nowReadingData={data.a_widgets.aboutWidgetBody.nrd}
 		favouriteBooksData={data.a_widgets.aboutWidgetBody.fbd}
 	/>
+	<ConceptsSection />
 	<div class="cont-philosophy" />
 </div>
 
