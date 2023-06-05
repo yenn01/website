@@ -1,6 +1,7 @@
 <script>
 	export let title;
 	export let description;
+	export let subtitle = '';
 </script>
 
 <div class="conceptContainer">
@@ -8,7 +9,12 @@
 		<div class="conceptSvg">
 			<slot />
 		</div>
-		<h2 class="conceptTitle">{title}</h2>
+		<div class="conceptTitleSection">
+			<h2 class="conceptTitle">{title}</h2>
+			{#if subtitle !== ''}
+				<h4>{subtitle}</h4>
+			{/if}
+		</div>
 	</div>
 
 	<div class="conceptDescription">
@@ -39,9 +45,21 @@
 		margin-right: 2rem;
 	}
 
+	.conceptTitleSection {
+		display: flex;
+		flex-direction: column;
+	}
+
 	h2 {
 		font-size: 2rem;
 		letter-spacing: 0.2rem;
 		font-weight: 600;
+		margin: 0;
+	}
+
+	h4 {
+		margin: 0;
+		color: var(--color-theme-5);
+		letter-spacing: 0.2rem;
 	}
 </style>

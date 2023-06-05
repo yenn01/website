@@ -7,19 +7,20 @@
 <div class="conceptSection">
 	<ConceptContainer
 		title={'Festina Lente'}
-		description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu odio ut sem nulla. Cursus mattis molestie a iaculis'}
+		subtitle={'speûde bradéōs'}
+		description={'A classical oxymoron of Greek origin adopted as a motto by emperor Augustus that translates to “make haste slowly”, a conflicting term that reminds one of the importance of balance between doing something well and doing something quickly.'}
 	>
 		<svg
 			width="10rem"
 			height="10rem"
 			version="1.1"
+			style="stroke:#ffffff;"
 			viewBox="0 0 16.32 15.677"
 			xmlns="http://www.w3.org/2000/svg"
 		>
 			<g
 				transform="translate(-55.592 -115.41)"
 				fill="none"
-				stroke="#000"
 				stroke-linecap="round"
 				stroke-linejoin="round"
 				stroke-width=".419"
@@ -33,13 +34,15 @@
 	</ConceptContainer>
 	<ConceptContainer
 		title={'Kaizen'}
-		description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu odio ut sem nulla. Cursus mattis molestie a iaculis'}
+		subtitle={'改善'}
+		description={'A Japanese business philosophy meaning continous improvement and changing for the better that is made famous by “The Toyota Way”. It’s a reminder to never be content and always work toward improving oneself and one’s surroundings.'}
 	>
 		<!-- Created with Inkscape (http://www.inkscape.org/) -->
 		<svg
 			width="10rem"
 			height="10rem"
 			version="1.1"
+			style="fill:#ffffff;"
 			viewBox="0 0 83.039 76.876"
 			xmlns="http://www.w3.org/2000/svg"
 		>
@@ -67,7 +70,7 @@
 				<path
 					d="m99.849 104.75-5.0272 5.0112 0.01608 0.016-13.814 13.859 5.0268 5.0108 13.798-13.842 13.798 13.842 5.0272-5.0108-13.814-13.859 0.016-0.016z"
 					stroke-width="0"
-					style="paint-order:stroke markers fill"
+					style="paint-order:stroke markers fill;fill:#b1b8bb"
 				/>
 			</g>
 		</svg>
