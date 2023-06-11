@@ -24,7 +24,14 @@
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		width: 250px;
+		flex-basis: 20%;
+		flex-grow: 1;
+	}
+
+	@media (min-width: 768px) {
+		.defaultWidgetContainer {
+			flex-grow: 0;
+		}
 	}
 
 	.defaultWidgetBody {

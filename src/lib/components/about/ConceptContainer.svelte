@@ -35,6 +35,7 @@
 		display: flex;
 		flex-direction: column;
 		margin: 1rem;
+		flex-basis: 45%;
 	}
 
 	.conceptDescription {

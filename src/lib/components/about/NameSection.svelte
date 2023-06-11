@@ -25,14 +25,14 @@
 		series: [
 			{
 				name: 'Skill',
-				data: [8, 8, 8, 6, 7]
+				data: [8, 8, 8, 7, 6]
 			}
 		],
 		xaxis: {
-			categories: ['Data Science', 'Web Dev', 'Writing', 'Graphic', 'Blockchain'],
+			categories: ['Data Science', 'Writing', 'Web Dev', 'Blockchain', 'Graphic'],
 			labels: {
 				style: {
-					fontSize: '18px',
+					fontSize: '1rem',
 					fontWeight: 800,
 					colors: ['#5A5A5A', '#5A5A5A', '#5A5A5A', '#5A5A5A', '#5A5A5A'],
 					opacity: 1
@@ -66,6 +66,7 @@
 <div class="cont-name">
 	<div class="graph-holder">
 		<!-- <div use:chart={g_options}/> -->
+
 		<div bind:this={container} />
 	</div>
 	<div class="name-holder">
@@ -86,24 +87,40 @@
 </div>
 
 <style>
+	.chart-wrapper {
+		width: 100%;
+		height: 100%;
+		display: block;
+		overflow: hidden;
+	}
+
 	.cont-name {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		/*Add media control to change to row reverse when screen small*/
+		flex-direction: column-reverse;
+	}
+	@media (min-width: 768px) {
+		.cont-name {
+			flex-direction: row;
+		}
 	}
 
 	.name-holder {
-		flex-grow: 16;
-		flex-shrink: 2;
-		flex-basis: 400px;
+		flex-grow: 2;
+		flex-shrink: 1;
+		flex-basis: 45%;
 		margin-bottom: 1rem;
 	}
 
 	.graph-holder {
-		flex-grow: 8;
-		flex-shrink: 0;
-		flex-basis: 592px;
+		flex-grow: 3;
+		flex-shrink: 1;
+		flex-basis: 55%;
+		height: 100%;
+		width: 100%;
+		min-height: 0;
+		overflow: hidden;
 	}
 
 	p {

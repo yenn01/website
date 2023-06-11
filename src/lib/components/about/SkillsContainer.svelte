@@ -25,8 +25,7 @@
 		display: flex;
 		padding: 1rem;
 		flex-direction: column;
-		flex: 1 0 500px;
-
+		flex: 1 0 45%;
 		border-right: 1px solid gray;
 		border-bottom: 1px solid gray;
 		border-radius: 0 0 4% 0;
