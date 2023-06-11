@@ -69,32 +69,11 @@
 	{/if}
 	<nav>
 		<ul>
-			<li class:active={$page.url.pathname === '/'}>
-				<a
-					href="/"
-					class="header-choice"
-					style=" {$page.url.pathname === '/' ? 'border-bottom: 2px solid #b1b8bb;' : ''}">home</a
-				>
-			</li>
 			<li class:active={$page.url.pathname === '/about'}>
 				<a
 					href="/about"
 					style=" {$page.url.pathname === '/about' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
 					>about</a
-				>
-			</li>
-			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
-				<a
-					href="/sverdle"
-					style=" {$page.url.pathname === '/posts' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
-					>posts</a
-				>
-			</li>
-			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
-				<a
-					href="/sverdle"
-					style=" {$page.url.pathname === '/games' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
-					>game</a
 				>
 			</li>
 		</ul>
@@ -107,10 +86,10 @@
 	}
 
 	#headerLogo {
-		top: 10px;
-		left: 0;
-		width: 90px;
-		height: 40px;
+		top: 1vh;
+		left: 1rem;
+		width: 2rem;
+		height: 2.5rem;
 		position: absolute;
 	}
 
