@@ -21,7 +21,7 @@
 	}
 
 	.skillTitle {
-		border-bottom: 3px solid black;
+		border-bottom: 3px solid var(--color-text-dark);
 		margin-bottom: 3rem;
 		margin-left: 1rem;
 		margin-top: 2rem;

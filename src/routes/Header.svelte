@@ -73,27 +73,27 @@
 				<a
 					href="/"
 					class="header-choice"
-					style=" {$page.url.pathname === '/' ? 'border-bottom: 2px solid black;' : ''}">home</a
+					style=" {$page.url.pathname === '/' ? 'border-bottom: 2px solid #b1b8bb;' : ''}">home</a
 				>
 			</li>
 			<li class:active={$page.url.pathname === '/about'}>
 				<a
 					href="/about"
-					style=" {$page.url.pathname === '/about' ? 'border-bottom: 2px solid black;' : ''}"
+					style=" {$page.url.pathname === '/about' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
 					>about</a
 				>
 			</li>
 			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
 				<a
 					href="/sverdle"
-					style=" {$page.url.pathname === '/posts' ? 'border-bottom: 2px solid black;' : ''}"
+					style=" {$page.url.pathname === '/posts' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
 					>posts</a
 				>
 			</li>
 			<li class:active={$page.url.pathname.startsWith('/sverdle')}>
 				<a
 					href="/sverdle"
-					style=" {$page.url.pathname === '/games' ? 'border-bottom: 2px solid black;' : ''}"
+					style=" {$page.url.pathname === '/games' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
 					>game</a
 				>
 			</li>
@@ -131,7 +131,7 @@
 		padding-top: 3vh;
 		font-family: 'Montserrat';
 		font-size: 1.3rem;
-		background-color: #f5f3e8;
+		background-color: #fb8f67;
 		z-index: 100;
 		filter: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
 	}
@@ -172,6 +172,7 @@
 		height: 0;
 		position: absolute;
 		top: 0;
+		color: var(--color-text);
 		/* left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
 		border-top: var(--size) solid var(--color-theme-1); */
@@ -193,6 +194,6 @@
 	}
 
 	a:hover {
-		color: var(--color-theme-1);
+		color: black;
 	}
 </style>

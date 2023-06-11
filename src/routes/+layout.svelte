@@ -3,6 +3,7 @@
 	import Header from './Header.svelte';
 	import { fade } from 'svelte/transition';
 	import './styles.css';
+	import Footer from './Footer.svelte';
 
 	export let data;
 </script>
@@ -16,9 +17,7 @@
 		</main>
 	{/key}
 
-	<footer>
-		<p>Yenn Miing &#xa9; 2023</p>
-	</footer>
+	<Footer />
 </div>
 
 <style>

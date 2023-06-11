@@ -35,6 +35,7 @@
 		flex-direction: column;
 		justify-content: center;
 		flex-wrap: wrap;
+		margin-bottom: 5rem;
 	}
 
 	.top-displacer {

@@ -28,6 +28,8 @@
 			translateY: '-24%',
 			duration: 10000,
 			autoplay: false,
+			color: '#000000',
+			stroke: '#000000',
 			easing: 'easeInOutCubic'
 		});
 		resizeLogo = anime({
@@ -84,9 +86,9 @@
 			<svg id="logo" version="1.1" viewBox="0 0 108.78 190.52" xmlns="http://www.w3.org/2000/svg">
 				<g transform="translate(-51.078 -54.024)">
 					<path
+						id="pathcolor"
 						d="m52.228 56.739v32.437l36.162 35.036-36.162 35.036v32.436l52.902 51.254 52.902-51.254v-32.436l-52.902 51.254-9.4868-9.1912 63.07-61.104v-32.437l-52.902 51.254-26.907 26.068-9.9363-9.6268 89.065-86.29v-32.437l-52.902 51.254z"
 						fill="none"
-						stroke="#000"
 						stroke-width="2.6"
 					/>
 				</g>
@@ -120,6 +122,7 @@
 		left: 50vw;
 		transform: translate(-50%, -50%);
 		z-index: 2000;
+		stroke: white;
 	}
 
 	#cont_logo {
