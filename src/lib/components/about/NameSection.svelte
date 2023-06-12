@@ -32,9 +32,9 @@
 			categories: ['Data Science', 'Writing', 'Web Dev', 'Blockchain', 'Graphic'],
 			labels: {
 				style: {
+					colors: '#b1b8b3b',
 					fontSize: '1rem',
 					fontWeight: 800,
-					colors: ['#5A5A5A', '#5A5A5A', '#5A5A5A', '#5A5A5A', '#5A5A5A'],
 					opacity: 1
 				}
 			}
