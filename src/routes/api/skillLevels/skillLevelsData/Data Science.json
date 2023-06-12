@@ -1,9 +1,9 @@
 {
     "3": {
-        "skills":"Scikit-learn, Pandas, Jupyter Notebook, gspread, pytesseract"
+        "skills":"Scikit-learn, Pandas, Jupyter Notebook, gspread, streamlit"
     },
     "2": {
-        "skills":"HuggingFace, Numpy, BeautifulSoup, streamlit"
+        "skills":"HuggingFace, Numpy, BeautifulSoup, pytesseract, Google Query Language"
     },
     "1": {
         "skills":"Seaborn, Matplotlib, opencv-python, apexcharts.js"
