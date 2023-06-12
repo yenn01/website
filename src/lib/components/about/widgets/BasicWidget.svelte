@@ -26,6 +26,11 @@
 		position: relative;
 		flex-basis: 20%;
 		flex-grow: 1;
+		/*Credits to https://shadows.brumm.af/ for the smooth shadow generator*/
+		box-shadow: 0.3px 0.5px 0.7px rgba(177, 184, 187, 0.024),
+			0.8px 1.6px 2px -0.8px rgba(177, 184, 187, 0.035),
+			2.1px 4.1px 5.2px -1.7px rgba(177, 184, 187, 0.046),
+			5px 10px 12.6px -2.5px rgba(177, 184, 187, 0.07);
 	}
 
 	@media (min-width: 768px) {
@@ -41,7 +46,7 @@
 
 	h4 {
 		text-transform: uppercase;
-		border-bottom: 1.5px solid black;
+		border-bottom: 1.5px solid var(--color-text-dark);
 		padding-left: 1rem;
 		padding-right: 1rem;
 		margin: 0;
