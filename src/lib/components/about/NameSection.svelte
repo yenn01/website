@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { Appear } from '$lib/components';
 	import TitleDividerComp from './TitleDividerComp.svelte';
+	import { Circle } from 'svelte-loading-spinners';
 	// import { chart } from "svelte-apexcharts";
 
 	let g_options = {
@@ -57,7 +58,7 @@
 		chart.render();
 	});
 
-	let container;
+	let container = null;
 </script>
 
 <!-- <Appear  -->
@@ -66,7 +67,11 @@
 <div class="cont-name">
 	<div class="graph-holder">
 		<!-- <div use:chart={g_options}/> -->
-
+		{#if container === null}
+			<div class="loadingContainer">
+				<Circle size="5" color="#fb8f67" unit="rem" duration="1s" />
+			</div>
+		{/if}
 		<div bind:this={container} />
 	</div>
 	<div class="name-holder">
@@ -87,6 +92,16 @@
 </div>
 
 <style>
+	.loadingContainer {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		margin-top: auto;
+		margin-bottom: auto;
+		align-items: center;
+	}
+
 	.chart-wrapper {
 		width: 100%;
 		height: 100%;
@@ -119,7 +134,7 @@
 		flex-basis: 55%;
 		height: 100%;
 		width: 100%;
-		min-height: 0;
+		min-height: 515px;
 		overflow: hidden;
 	}
 
