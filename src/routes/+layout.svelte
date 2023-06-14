@@ -4,23 +4,38 @@
 	import { fade } from 'svelte/transition';
 	import './styles.css';
 	import Footer from './Footer.svelte';
+	import { page } from '$app/stores';
 
 	export let data;
 </script>
 
-<div class="app">
-	<Header />
+{#if $page.error}
+	<div class="app">
+		<div class="errorHeader">Website a work in progress.</div>
+		<slot />
+	</div>
+{:else}
+	<div class="app">
+		<Header />
 
-	{#key data.path}
-		<main in:fade={{ duration: 300, delay: 200 }}>
-			<slot />
-		</main>
-	{/key}
+		{#key data.path}
+			<main in:fade={{ duration: 300, delay: 200 }}>
+				<slot />
+			</main>
+		{/key}
 
-	<Footer />
-</div>
+		<Footer />
+	</div>
+{/if}
 
 <style>
+	.errorHeader {
+		width: 100%;
+		background-color: var(--color-theme-dark-1);
+		color: black;
+		text-align: center;
+	}
+
 	.app {
 		display: flex;
 		flex-direction: column;
