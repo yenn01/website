@@ -1,10 +1,20 @@
 <script>
+	import { fade } from 'svelte/transition';
 	import TitleDividerComp from './TitleDividerComp.svelte';
 
 	let email = 'yennmiing.ooi@protonmail.com';
+	$: copied = false;
 
 	function copy() {
-		navigator.clipboard.writeText(email);
+		navigator.clipboard.writeText(email).then(
+			() => {
+				copied = true;
+				setTimeout(() => {
+					copied = false;
+				}, 3000);
+			},
+			(e) => {}
+		);
 	}
 </script>
 
@@ -30,18 +40,25 @@
 			/>
 		</svg>
 	</button>
+
+	{#if copied}
+		<small class="copied">Copied!</small>
+	{:else}
+		<small class="copied">&nbsp;</small>
+	{/if}
 </div>
 
 <style>
 	.contactHolder {
 		display: flex;
 		flex-direction: column;
-		align-items: center;
+		align-items: flex-end;
 		justify-items: center;
 	}
 
 	button {
 		font-size: 1.5rem;
+		font-weight: 500;
 		color: white;
 		border: none;
 		background-color: transparent;
