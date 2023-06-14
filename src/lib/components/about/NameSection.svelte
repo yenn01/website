@@ -3,6 +3,7 @@
 	import { Appear } from '$lib/components';
 	import TitleDividerComp from './TitleDividerComp.svelte';
 	import { Circle } from 'svelte-loading-spinners';
+	import Page from '../../../routes/+page.svelte';
 	// import { chart } from "svelte-apexcharts";
 
 	let g_options = {
@@ -20,9 +21,14 @@
 		stroke: {
 			colors: ['#b3b8ff']
 		},
+
 		markers: {
 			colors: ['#fa8686']
 		},
+		tooltip: {
+			theme: 'dark'
+		},
+
 		series: [
 			{
 				name: 'Skill',
