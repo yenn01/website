@@ -84,5 +84,6 @@
 		width: 100%;
 		gap: 20px;
 		flex-wrap: wrap;
+		justify-content: center;
 	}
 </style>
