@@ -23,7 +23,7 @@
 	<small>Click to copy</small>
 
 	<button on:click={copy}>
-		{email}
+		yennmiing.ooi@&#8203;protonmail.com
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			width="16"
@@ -61,6 +61,7 @@
 		font-weight: 500;
 		color: white;
 		border: none;
+		text-align: right;
 		background-color: transparent;
 	}
 
