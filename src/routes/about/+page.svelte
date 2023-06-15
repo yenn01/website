@@ -17,6 +17,10 @@
 	console.log(data);
 </script>
 
+<svelte:head>
+	<title>YennM</title>
+	<meta name="description" content="Yenn Miing's place for creativity, discovery and design." />
+</svelte:head>
 <div class="cont-about">
 	<div class="top-displacer" />
 	<NameSection />
