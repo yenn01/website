@@ -52,7 +52,6 @@
 			</svg>
 		</a>
 	</div>
-	<small>Click to copy</small>
 
 	<button on:click={copy}>
 		yennmiing.ooi@&#8203;protonmail.com
@@ -72,7 +71,7 @@
 			/>
 		</svg>
 	</button>
-
+	<small>Click to copy</small>
 	{#if copied}
 		<small class="copied">Copied!</small>
 	{:else}
