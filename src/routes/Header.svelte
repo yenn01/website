@@ -14,15 +14,15 @@
 	let y = 0;
 	let ch = 0;
 	let justifyClass = '';
-	// onMount(() => {
-	// 	animHeader = anime({
-	// 		targets: '#contHeader',
-	// 		opacity: 1,
-	// 		duration: 10000,
-	// 		autoplay: false,
-	// 		easing: 'easeInOutCubic'
-	// 	});
-	// });
+	onMount(() => {
+		animHeader = anime({
+			targets: '#contHeader',
+			opacity: 1,
+			duration: 10000,
+			autoplay: false,
+			easing: 'easeInOutCubic'
+		});
+	});
 
 	function toggleHeader() {
 		if (animHeader != undefined) {
