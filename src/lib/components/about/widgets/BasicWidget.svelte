@@ -1,9 +1,10 @@
 <script>
 	export let widgetTitle = '';
 	export let widgetEmoji = '';
+	export let flexBasis = '20%';
 </script>
 
-<div class="defaultWidgetContainer">
+<div class="defaultWidgetContainer" style="flex-basis:{flexBasis}">
 	<h4>{widgetTitle}</h4>
 	<div class="defaultWidgetBody">
 		<slot />
@@ -19,12 +20,12 @@
 		border: 0.5px solid rgb(121, 121, 121);
 		padding-bottom: 1rem;
 		padding-top: 0.4rem;
-		margin-left: 1rem;
-		margin-right: 1rem;
+		margin-left: 0.5rem;
+		margin-right: 0.5rem;
 		display: flex;
 		flex-direction: column;
 		position: relative;
-		flex-basis: 20%;
+
 		flex-grow: 1;
 		/*Credits to https://shadows.brumm.af/ for the smooth shadow generator*/
 		box-shadow: 0.3px 0.5px 0.7px rgba(177, 184, 187, 0.024),

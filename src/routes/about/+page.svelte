@@ -28,6 +28,7 @@
 	<WidgetSection
 		nowReadingData={data.a_widgets.aboutWidgetBody.nrd}
 		favouriteBooksData={data.a_widgets.aboutWidgetBody.fbd}
+		nowInterestedData={data.a_widgets.aboutWidgetBody.ni}
 	/>
 	<ConceptsSection />
 	<ContactSection />
