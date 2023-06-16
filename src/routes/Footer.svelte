@@ -59,7 +59,7 @@
 	.WIPHolder > p {
 		margin: 0.5rem 0.4rem;
 		font-weight: 500;
-		font-size: 0.9rem;
+		font-size: 0.7rem;
 	}
 
 	.cornerHolder {
