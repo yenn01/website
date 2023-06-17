@@ -1,9 +1,9 @@
 <script>
-	import TitleDividerComp from './TitleDividerComp.svelte';
-	import WidgetHolder from './WidgetHolder.svelte';
-	import FavouriteBooks from './widgets/FavouriteBooks.svelte';
-	import NowInterested from './widgets/NowInterested.svelte';
-	import NowReading from './widgets/NowReading.svelte';
+	import TitleDividerComp from '../TitleDividerComp.svelte';
+	import WidgetHolder from '../WidgetHolder.svelte';
+	import FavouriteBooks from '../widgets/FavouriteBooks.svelte';
+	import NowInterested from '../widgets/NowInterested.svelte';
+	import NowReading from '../widgets/NowReading.svelte';
 	export let nowReadingData;
 	export let favouriteBooksData;
 	export let nowInterestedData;

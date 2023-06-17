@@ -1,6 +1,6 @@
 <script>
 	import { fade } from 'svelte/transition';
-	import TitleDividerComp from './TitleDividerComp.svelte';
+	import TitleDividerComp from '../TitleDividerComp.svelte';
 
 	let email = 'yennmiing.ooi@protonmail.com';
 	$: copied = false;

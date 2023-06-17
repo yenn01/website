@@ -1,9 +1,9 @@
 <script>
 	import { onMount } from 'svelte';
 	import { Appear } from '$lib/components';
-	import TitleDividerComp from './TitleDividerComp.svelte';
+	import TitleDividerComp from '../TitleDividerComp.svelte';
 	import { Circle } from 'svelte-loading-spinners';
-	import Page from '../../../routes/+page.svelte';
+	import Page from '../../../../routes/+page.svelte';
 	// import { chart } from "svelte-apexcharts";
 
 	let g_options = {

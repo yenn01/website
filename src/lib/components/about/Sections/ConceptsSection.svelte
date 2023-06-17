@@ -1,6 +1,6 @@
 <script>
-	import ConceptContainer from './ConceptContainer.svelte';
-	import TitleDividerComp from './TitleDividerComp.svelte';
+	import ConceptContainer from '../ConceptContainer.svelte';
+	import TitleDividerComp from '../TitleDividerComp.svelte';
 </script>
 
 <TitleDividerComp num={'04'} text={'Philosophies / Concepts'} />

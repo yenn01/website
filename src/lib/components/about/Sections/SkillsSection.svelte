@@ -1,6 +1,6 @@
 <script>
-	import SkillsContainer from './SkillsContainer.svelte';
-	import TitleDividerComp from './TitleDividerComp.svelte';
+	import SkillsContainer from '../SkillsContainer.svelte';
+	import TitleDividerComp from '../TitleDividerComp.svelte';
 	export let skillLevelData;
 
 	//console.log(skillLevelData.body.ds)
