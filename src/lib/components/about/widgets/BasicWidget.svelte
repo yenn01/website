@@ -54,6 +54,7 @@
 		text-align: center;
 		padding-bottom: 0.4rem;
 		letter-spacing: 0.1rem;
+		font-family: var(--font-header);
 	}
 
 	.emoji {

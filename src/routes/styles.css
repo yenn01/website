@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Montserrat:wght@400;500&family=Roboto+Mono&display=swap');
 
 
 
@@ -17,10 +17,14 @@
     --color-theme-5: #61a0af;
     --color-theme-dark-1:#fb8f67;
     --color-bg-dark-1: #2a2d34 ;
+    --color-bg-dark-2: #393d47;
     --color-text-dark: #b1b8bb;
+    --color-text-dark-lg: #c0c7ca;
 	--color-text: rgba(0, 0, 0, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
+    --font-header: 'Inter', sans-serif;
+    --font-mono : 'Roboto Mono', monospace;
 	font-family: var(--font-body);
 	color: var(--color-text);
 }

@@ -12,6 +12,7 @@
 		text-align: left;
 		font-size: 1.8rem;
 		margin: 0;
+		font-family: var(--font-header);
 		/* text-transform: uppercase; */
 	}
 
