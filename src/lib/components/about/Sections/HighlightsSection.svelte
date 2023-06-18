@@ -10,7 +10,7 @@
 	<SvelteHL />
 	<PythonHL />
 
-	<div id="hiddenFlexItem" />
+	<!-- <div id="hiddenFlexItem" /> -->
 </div>
 
 <style>
@@ -18,7 +18,7 @@
 		display: flex;
 		flex-direction: row;
 		width: 100%;
-		padding-left: 1rem;
+		padding: 1rem;
 		flex-wrap: wrap;
 		margin-bottom: 2rem;
 	}
