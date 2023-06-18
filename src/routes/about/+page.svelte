@@ -3,9 +3,10 @@
 	import { NameSection, SkillsSection } from '$lib/components';
 
 	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
-	import WidgetSection from '$lib/components/about/WidgetSection.svelte';
-	import ConceptsSection from '$lib/components/about/ConceptsSection.svelte';
-	import ContactSection from '$lib/components/about/ContactSection.svelte';
+	import WidgetSection from '$lib/components/about/Sections/WidgetSection.svelte';
+	import ConceptsSection from '$lib/components/about/Sections/ConceptsSection.svelte';
+	import ContactSection from '$lib/components/about/Sections/ContactSection.svelte';
+	import HighlightsSection from '$lib/components/about/Sections/HighlightsSection.svelte';
 
 	export let data;
 	onMount(() => {
@@ -24,6 +25,7 @@
 <div class="cont-about">
 	<div class="top-displacer" />
 	<NameSection />
+	<HighlightsSection />
 	<SkillsSection skillLevelData={data.sl.skillLevelBody} />
 	<WidgetSection
 		nowReadingData={data.a_widgets.aboutWidgetBody.nrd}

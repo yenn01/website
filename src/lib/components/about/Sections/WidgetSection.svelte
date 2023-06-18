@@ -9,7 +9,7 @@
 	export let nowInterestedData;
 </script>
 
-<TitleDividerComp num={'03'} text={'Widgets'} />
+<TitleDividerComp num={'04'} text={'Widgets'} />
 <WidgetHolder>
 	<NowReading {nowReadingData} />
 	<FavouriteBooks {favouriteBooksData} />

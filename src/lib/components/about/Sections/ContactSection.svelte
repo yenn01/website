@@ -18,7 +18,7 @@
 	}
 </script>
 
-<TitleDividerComp num={'05'} text={'Contact'} />
+<TitleDividerComp num={'06'} text={'Contact'} />
 
 <div class="contactHolder">
 	<h3>Find me at:</h3>

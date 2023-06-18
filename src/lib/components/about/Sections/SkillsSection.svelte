@@ -6,7 +6,7 @@
 	//console.log(skillLevelData.body.ds)
 </script>
 
-<TitleDividerComp num={'02'} text={'Stack'} />
+<TitleDividerComp num={'03'} text={'Stack'} />
 
 <div class="skillsection">
 	<SkillsContainer

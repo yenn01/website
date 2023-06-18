@@ -3,7 +3,7 @@
 	import TitleDividerComp from '../TitleDividerComp.svelte';
 </script>
 
-<TitleDividerComp num={'04'} text={'Philosophies / Concepts'} />
+<TitleDividerComp num={'05'} text={'Philosophies / Concepts'} />
 <div class="conceptSection">
 	<ConceptContainer
 		title={'Festina Lente'}
