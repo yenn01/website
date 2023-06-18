@@ -119,6 +119,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
+		padding: 1rem;
 		flex-direction: column-reverse;
 	}
 	@media (min-width: 768px) {
@@ -162,7 +163,7 @@
 		font-family: 'Inter';
 		/* text-transform: uppercase; */
 		text-align: right;
-		color: grey;
+		color: var(--color-text-dark-lg);
 		margin-bottom: 0.6rem;
 	}
 </style>
