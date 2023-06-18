@@ -36,7 +36,7 @@
 
 	@media (min-width: 768px) {
 		.defaultWidgetContainer {
-			flex-grow: 0;
+			flex-grow: 1;
 		}
 	}
 
