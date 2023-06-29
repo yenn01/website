@@ -1,0 +1,5 @@
+{
+    "topic":"GraphQL",
+    "description":"A query language and runtime for API that enables clients to precisely request the data they need. It provides an efficient and flexible alternative to traidional REST APIs.",
+    "link":"https://graphql.org/"
+}

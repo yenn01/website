@@ -3,7 +3,7 @@
 	export let nowInterestedData;
 </script>
 
-<BasicWidget widgetTitle={'Now Interested In'} widgetEmoji={'🔎'} flexBasis={'30%'}>
+<BasicWidget widgetTitle={'Now Interested In'} widgetEmoji={'🔎'} flexBasis={'25%'}>
 	<h3>{nowInterestedData.topic}</h3>
 	<blockquote>{nowInterestedData.description}</blockquote>
 </BasicWidget>

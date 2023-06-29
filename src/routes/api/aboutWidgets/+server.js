@@ -1,6 +1,7 @@
 import nrd from './nowReadingData.json';
 import fbd from './favouriteBooksData.json';
 import ni from './nowInterested.json';
+import nl from './nowLearning.json';
 
 export async function GET() {
 	return new Response(
@@ -8,7 +9,8 @@ export async function GET() {
 			aboutWidgetBody: {
 				nrd: nrd,
 				fbd: fbd,
-				ni: ni
+				ni: ni,
+				nl: nl
 			}
 		}),
 		{ status: 200 }
