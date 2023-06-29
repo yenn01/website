@@ -1,16 +1,22 @@
 {
     "books":[
         {
-            "title":"The Gift of Fear",
-            "author":"Gavin De Becker",
-            "progress":35,
-            "link":"https://en.wikipedia.org/wiki/The_Gift_of_Fear"
+            "title":"The Tipping Point",
+            "author":"Malcolm Gladwell",
+            "progress":10,
+            "link":"https://en.wikipedia.org/wiki/The_Tipping_Point"
         },
         {
             "title":"Quiet: The Power of Introverts in a World That Can't Stop Talking",
             "author":"Susan Cain",
             "progress":25,
             "link":"https://en.wikipedia.org/wiki/Quiet:_The_Power_of_Introverts_in_a_World_That_Can't_Stop_Talking"
+        },
+        {
+            "title":"Zero to One",
+            "author":"Peter Thiel with Blake Masters",
+            "progress":15,
+            "link":"https://en.wikipedia.org/wiki/Zero_to_One"
         }
     ]
 }
