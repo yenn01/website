@@ -20,5 +20,6 @@
 
 	dd {
 		text-align: right;
+		margin-bottom: 1rem;
 	}
 </style>
