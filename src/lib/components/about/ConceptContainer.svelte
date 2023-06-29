@@ -43,7 +43,8 @@
 	}
 
 	.conceptSvg {
-		margin-right: 2rem;
+		margin-right: 1rem;
+		margin-left: 1rem;
 	}
 
 	.conceptTitleSection {
