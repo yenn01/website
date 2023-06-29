@@ -29,12 +29,14 @@
 		justify-content: space-between;
 		align-items: center;
 		margin-bottom: 2rem;
+		flex-wrap: wrap;
 	}
 
 	.conceptContainer {
 		display: flex;
 		flex-direction: column;
 		margin: 1rem;
+		flex-grow: 1;
 		flex-basis: 45%;
 	}
 
@@ -45,11 +47,15 @@
 	.conceptSvg {
 		margin-right: 1rem;
 		margin-left: 1rem;
+		display: flex;
+		justify-content: center;
+		flex-grow: 1;
 	}
 
 	.conceptTitleSection {
 		display: flex;
 		flex-direction: column;
+		flex-grow: 1;
 	}
 
 	h2 {
