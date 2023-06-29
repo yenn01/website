@@ -18,7 +18,6 @@
 		display: flex;
 		flex-direction: row;
 		width: 100%;
-		padding: 1rem;
 		flex-wrap: wrap;
 		margin-bottom: 2rem;
 	}

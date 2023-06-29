@@ -119,7 +119,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		padding: 1rem;
+		/* padding: 1rem; */
 		flex-direction: column-reverse;
 	}
 	@media (min-width: 768px) {
