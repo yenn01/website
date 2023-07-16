@@ -1,5 +1,6 @@
 <script>
 	import '../app.postcss';
+	import '../postStyles.css';
 	import Header from './Header.svelte';
 	import { fade } from 'svelte/transition';
 	import './styles.css';
@@ -41,6 +42,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		min-height: 100vh;
 	}
 
 	main {
