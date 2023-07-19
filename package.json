@@ -39,6 +39,8 @@
 	"dependencies": {
 		"animejs": "^3.2.1",
 		"apexcharts": "^3.39.0",
+		"base64-js": "^1.5.1",
+		"base64js": "^1.0.1",
 		"svelte-apexcharts": "^1.0.2",
 		"svelte-inview": "^4.0.0"
 	}

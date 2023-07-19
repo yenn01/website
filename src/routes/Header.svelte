@@ -70,10 +70,12 @@
 	<nav>
 		<ul>
 			<li class:active={$page.url.pathname === '/about'}>
+				<a href="/about" class={$page.url.pathname === '/about' ? 'activeSection' : ''}>about</a>
+			</li>
+			<li class:active={$page.url.pathname === '/blog/hello-world-post'}>
 				<a
-					href="/about"
-					style=" {$page.url.pathname === '/about' ? 'border-bottom: 2px solid #b1b8bb;' : ''}"
-					>about</a
+					href="/blog/hello-world-post"
+					class={$page.url.pathname === '/blog/hello-world-post' ? 'activeSection' : ''}>blog</a
 				>
 			</li>
 		</ul>
@@ -81,6 +83,11 @@
 </header>
 
 <style>
+	.activeSection {
+		border-bottom: 2px solid #b1b8bb;
+		color: black;
+	}
+
 	#contHeader {
 		opacity: 1;
 	}
