@@ -3,19 +3,26 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
+	import Error from '../../+error.svelte';
 	export let data;
 
 	let verified = false;
 	let sameDigest = false;
+	let checkSignature;
 
 	const { cleanedRaw, signature, digest } = stripHashAndDigest(data.postRaw);
-	const signatureBytes = base64js.toByteArray(signature).buffer;
 
 	function stripHashAndDigest(_raw) {
 		const signedRe = /signed:\s+(?<signed>.+)\r?\n/g;
 		const digestRe = /digest:\s+(?<digest>.+)\r?\n/g;
-		const signature = signedRe.exec(_raw).groups.signed;
-		const digest = digestRe.exec(_raw).groups.digest;
+		let signature = undefined;
+		let digest = undefined;
+		try {
+			signature = signedRe.exec(_raw).groups.signed;
+		} catch (err) {}
+		try {
+			digest = digestRe.exec(_raw).groups.digest;
+		} catch (err) {}
 		const cleanSigned = _raw.replace(signedRe, '');
 		const cleanBoth = cleanSigned.replace(digestRe, '');
 		return {
@@ -71,10 +78,15 @@
 	onMount(() => {
 		$store_showHeader = 9999;
 		$store_showHeaderLogo = true;
-		verifyPost(data.key, signatureBytes, cleanedRaw);
-		digestMessage(cleanedRaw).then((digestHex) => {
-			sameDigest = digestHex == digest;
-		});
+		if (signature !== undefined) {
+			const signatureBytes = base64js.toByteArray(signature).buffer;
+			verifyPost(data.key, signatureBytes, cleanedRaw);
+		}
+		if (digest !== undefined) {
+			digestMessage(cleanedRaw).then((digestHex) => {
+				sameDigest = digestHex == digest;
+			});
+		}
 	});
 </script>
 
@@ -155,7 +167,7 @@
 		text-align: right;
 		align-self: end;
 		margin-top: 3rem;
-		max-width: 100%;
+		width: 100%;
 	}
 
 	.container_cryptoStatus p {
@@ -198,7 +210,7 @@
 
 	@media (min-width: 768px) {
 		.container_cryptoStatus {
-			max-width: 40%;
+			width: 40%;
 		}
 	}
 </style>
