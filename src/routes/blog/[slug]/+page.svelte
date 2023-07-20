@@ -9,8 +9,8 @@
 
 	export let data;
 
-	let verified = false;
-	let sameDigest = false;
+	$: verified = false;
+	$: sameDigest = false;
 	$: readingMinutes = 0;
 	let checkSignature;
 

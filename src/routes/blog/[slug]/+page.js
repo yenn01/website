@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-// export const prerender = true;
+export const prerender = 'auto';
 export async function load({ params }) {
 	try {
 		//console.log(params.slug);

@@ -27,7 +27,10 @@ export async function verifyPost(_publicKey, _signature, _toVerify) {
 			encoded
 		)
 		.then((sig) => {
-			// console.log(sig);
+			console.log(_publicKey);
+			console.log(_toVerify);
+			console.log(_signature);
+			console.log(sig);
 			return sig;
 		});
 }
