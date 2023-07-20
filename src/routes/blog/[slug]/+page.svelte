@@ -28,6 +28,7 @@
 		$store_showHeaderLogo = true;
 		if (signature !== undefined) {
 			const signatureBytes = base64js.toByteArray(signature).buffer;
+			console.log(base64js.fromByteArray(new Uint8Array(signatureBytes)));
 			verified = await verifyPost(data.key, signatureBytes, cleanedRaw);
 		}
 		if (digest !== undefined) {
