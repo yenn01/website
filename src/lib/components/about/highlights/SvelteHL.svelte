@@ -80,6 +80,7 @@
 		font-style: normal;
 		font-size: 3rem;
 		font-weight: 500;
+		font-family: 'iosevka-aile', monospace;
 	}
 
 	.language {

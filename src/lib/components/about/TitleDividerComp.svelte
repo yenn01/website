@@ -19,6 +19,7 @@
 	.num {
 		color: darkgray;
 		font-size: 1.1rem;
+		font-family: 'iosevka-aile', monospace;
 	}
 
 	.skillTitle {
