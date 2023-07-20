@@ -19,8 +19,8 @@
 	<div class="app">
 		<Header />
 
-		{#key data.path}
-			<main in:fade={{ duration: 300, delay: 200 }}>
+		{#key $page}
+			<main in:fade={{ duration: 200, delay: 200 }} out:fade={{ duration: 0 }}>
 				<slot />
 			</main>
 		{/key}

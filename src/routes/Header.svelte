@@ -26,7 +26,7 @@
 
 	function toggleHeader() {
 		if (animHeader != undefined) {
-			console.log('Trieds');
+			// console.log('Trieds');
 			animHeader.seek(($store_showHeader / ch) * animHeader.duration);
 		}
 		if ($store_showHeaderLogo === true) {
@@ -72,10 +72,9 @@
 			<li class:active={$page.url.pathname === '/about'}>
 				<a href="/about" class={$page.url.pathname === '/about' ? 'activeSection' : ''}>about</a>
 			</li>
-			<li class:active={$page.url.pathname === '/blog/hello-world-post'}>
-				<a
-					href="/blog/hello-world-post"
-					class={$page.url.pathname === '/blog/hello-world-post' ? 'activeSection' : ''}>blog</a
+			<li class:active={$page.url.pathname.startsWith('/blog')}>
+				<a href="/blog" class={$page.url.pathname.startsWith('/blog') ? 'activeSection' : ''}
+					>blog</a
 				>
 			</li>
 		</ul>
