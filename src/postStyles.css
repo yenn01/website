@@ -1,3 +1,11 @@
 .post-content :is(h2, h3, h4, h5, h6) {
     color:var(--color-theme-2)
 }
+
+@media (max-width: 768px ) {
+pre code {
+    display: inline-block;
+    width: 80vw;
+    overflow-x: auto;
+  }
+}
