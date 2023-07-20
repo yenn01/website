@@ -1,5 +1,8 @@
 import { error } from '@sveltejs/kit';
-export const prerender = 'auto';
+// export const prerender = 'auto';
+export const config = {
+	runtime: 'edge'
+};
 export async function load({ params }) {
 	try {
 		//console.log(params.slug);
