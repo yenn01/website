@@ -7,7 +7,7 @@ export async function load({ params }) {
 		const post = await import(`../../../posts/${params.slug}.md`);
 		const postRaw = await import(`../../../posts/${params.slug}.md?raw`);
 		console.log(publicKey.default);
-
+		console.log(postRaw.default);
 		return {
 			post: {
 				content: post.default,

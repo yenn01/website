@@ -34,6 +34,9 @@ export function stripHashAndDigest(_raw) {
 	}
 	const cleanSigned = _raw.replace(signedRe, '');
 	const cleanBoth = cleanSigned.replace(digestRe, '');
+	console.log(cleanBoth);
+	console.log(signature);
+	console.log(digest);
 	return {
 		cleanedRaw: cleanBoth,
 		signature,
