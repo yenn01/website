@@ -4,7 +4,7 @@
 	import { fade } from 'svelte/transition';
 	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
 	import Error from '../../+error.svelte';
-	import { verifyPost, digestMessage } from '$lib/utils/cryptoRelated';
+	import { verifyPost, digestMessage } from '$lib/utils/cryptoRelated.js';
 	import { stripHashAndDigest } from '$lib/utils';
 
 	export let data;

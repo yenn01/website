@@ -15,6 +15,7 @@ export async function verifyPost(_publicKey, _signature, _toVerify) {
 		true,
 		['verify']
 	);
+	console.log(cryptoKey);
 
 	return await crypto.subtle
 		.verify(
