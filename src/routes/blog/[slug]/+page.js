@@ -6,7 +6,7 @@ export async function load({ params }) {
 		const publicKey = await import(`../../../secrets/public.jwk?raw`);
 		const post = await import(`../../../posts/${params.slug}.md`);
 		const postRaw = await import(`../../../posts/${params.slug}.md?raw`);
-		// console.log(publicKey.default);
+		console.log(publicKey.default);
 
 		return {
 			post: {
