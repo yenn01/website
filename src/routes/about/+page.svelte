@@ -15,7 +15,7 @@
 
 		//console.log($store_showHeader);
 	});
-	console.log(data);
+	// console.log(data);
 </script>
 
 <svelte:head>

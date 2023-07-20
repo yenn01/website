@@ -1,7 +1,7 @@
 <script>
 	import BasicWidget from './BasicWidget.svelte';
 	export let favouriteBooksData;
-	console.log(favouriteBooksData);
+	// console.log(favouriteBooksData);
 </script>
 
 <BasicWidget widgetTitle={'Favourite Books'} widgetEmoji={'📚'}>

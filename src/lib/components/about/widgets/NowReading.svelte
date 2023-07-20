@@ -1,7 +1,7 @@
 <script>
 	import BasicWidget from './BasicWidget.svelte';
 	export let nowReadingData;
-	console.log(nowReadingData);
+	// console.log(nowReadingData);
 </script>
 
 <BasicWidget widgetTitle={'Now Reading'} widgetEmoji={'📖'}>

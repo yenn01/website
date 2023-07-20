@@ -4,13 +4,13 @@
 	export let elementTitle = 'Title';
 	export let fillColour;
 
-	function loadED() {
-		for (var key of Object.keys(elementData)) {
-			console.log(key + ' -> ' + elementData[key]['skills']);
-		}
-	}
+	// function loadED() {
+	// 	for (var key of Object.keys(elementData)) {
+	// 		console.log(key + ' -> ' + elementData[key]['skills']);
+	// 	}
+	// }
 
-	$: elementData, loadED();
+	// $: elementData, loadED();
 </script>
 
 <div class="comp-skills">
