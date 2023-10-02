@@ -5,9 +5,8 @@
 	import { fade } from 'svelte/transition';
 	import './styles.css';
 	import Footer from './Footer.svelte';
-	import { page } from '$app/stores';
-
-	export let data;
+	import { page, navigating } from '$app/stores';
+	import PageLoading from '$lib/components/PageLoading.svelte';
 </script>
 
 {#if $page.error}
@@ -20,9 +19,15 @@
 		<Header />
 
 		{#key $page}
-			<main in:fade={{ duration: 200, delay: 200 }} out:fade={{ duration: 0 }}>
-				<slot />
-			</main>
+			{#if $navigating}
+				<main in:fade={{ duration: 200, delay: 200 }} out:fade={{ duration: 0 }}>
+					<PageLoading />
+				</main>
+			{:else}
+				<main in:fade={{ duration: 200, delay: 200 }} out:fade={{ duration: 0 }}>
+					<slot />
+				</main>
+			{/if}
 		{/key}
 
 		<Footer />
