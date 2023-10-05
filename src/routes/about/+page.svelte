@@ -28,7 +28,6 @@
 	<HighlightsSection />
 	<SkillsSection skillLevelData={data.sl.skillLevelBody} />
 	<WidgetSection
-		nowReadingData={data.a_widgets.aboutWidgetBody.nrd}
 		favouriteBooksData={data.a_widgets.aboutWidgetBody.fbd}
 		nowInterestedData={data.a_widgets.aboutWidgetBody.ni}
 		nowLearningData={data.a_widgets.aboutWidgetBody.nl}
