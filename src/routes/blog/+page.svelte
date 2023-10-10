@@ -6,7 +6,7 @@
 </script>
 
 <!-- ...Post HTML here -->
-<RecentPosts posts={data.allPosts} />
+<RecentPosts posts={data.posts} />
 
 <style>
 	aside {

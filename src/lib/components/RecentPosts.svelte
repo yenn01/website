@@ -1,5 +1,9 @@
 <script>
 	export let posts;
+
+	function getCategories(value) {
+		value = value.split(',');
+	}
 </script>
 
 <!-- ...Post HTML here -->
@@ -18,16 +22,16 @@
 	{#each posts as post}
 		<div class="post-holder">
 			<div class="post-title-holder">
-				<a href=".{post.path}" class="post-title">
-					{post.meta.title}
+				<a href="/blog/{post.id}" class="post-title">
+					{post.ymooi_title}
 				</a>
 			</div>
 			<div class="post-description-holder">
-				<caption>{post.meta.date} </caption>
-				<p>{post.meta.description}</p>
+				<caption>{post.ymooi_date} </caption>
+				<p>{post.ymooi_description}</p>
 
 				<div class="post-description-bottom">
-					{#each post.meta.categories as category}
+					{#each post.ymooi_categories.split(',') as category}
 						<span class="tags">&num;{category}&nbsp;</span>
 					{/each}
 				</div>

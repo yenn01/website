@@ -1,13 +1,61 @@
 // src/routes/api/posts/+server.js
-import { fetchMarkdownPosts } from '$lib/utils';
-import { json } from '@sveltejs/kit';
 
-export const GET = async () => {
-	const allPosts = await fetchMarkdownPosts();
+const address = 'VIiWGPtisvWkgI9mdtG8u7DmFZjVUKAlHoSqj9_ghXg';
+/** @type {import('./$types').RequestHandler} */
+export const GET = async ({ url }) => {
+	// console.log(params);
+	// if (!params.address) {
+	// 	return new Response(
+	// 		JSON.stringify({
+	// 			error: 'No address provided'
+	// 		}),
+	// 		{ status: 400 }
+	// 	);
+	// }
 
-	const sortedPosts = allPosts.sort((a, b) => {
-		return new Date(b.meta.date) - new Date(a.meta.date);
+	let response = await fetch('https://arweave.net/graphql', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({
+			//GraphQL query
+			query: `
+            query {
+                transactions(
+                            owners:["${address}"],
+                    tags: [
+                        {
+                            name: "Content-Type",
+                            values: ["text/markdown"]
+                        }
+                    ],
+                    first: 8,
+                    sort: HEIGHT_DESC
+                ) {
+                    edges {
+                        cursor
+                        node {
+                            id
+                            tags{
+                                name
+                                value
+                            }
+                        }
+                    }
+                }
+            }              
+            `
+		})
 	});
 
-	return json(sortedPosts);
+	// const transaction = arweave.transactions
+	// 	.getData(tx_info, { decode: true, string: true })
+	// 	.then((transaction) => {
+	// 		console.log(transaction);
+	// 		if (typeof transaction === 'string') {
+	// 			txData = transaction;
+	// 		}
+	// 	});
+	return response;
 };
