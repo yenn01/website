@@ -37,6 +37,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/analytics": "^1.1.0",
 		"animejs": "^3.2.1",
 		"apexcharts": "^3.39.0",
 		"arweave": "^1.14.4",

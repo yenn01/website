@@ -7,6 +7,11 @@
 	import Footer from './Footer.svelte';
 	import { page, navigating } from '$app/stores';
 	import PageLoading from '$lib/components/PageLoading.svelte';
+
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
+
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 {#if $page.error}
