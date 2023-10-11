@@ -1,7 +1,7 @@
 ---
 title: Hello World & the World Tomorrow 👋
 description: First init post.
-date: '2023-7-20'
+date: 1689870494000
 categories:
   - sveltekit
   - svelte
@@ -20,3 +20,7 @@ Some down the line considered upgrades for the blog system in loose chronologica
 - Setting up GraphQL for querying posts.
 - Implementing some form of vectorised posts embeddings for similarity or post recommendations.
 - Have posts uploaded and retrieved from the Arweave network.
+
+(Tamper):
+Previously was not using epoch time for the date field, this has been changed to allow for post sorting from various sources. Consequently, with me not planning to rerun the signs and checks, it is expected from this change (and this edit paragraph) to cause both the checksum and signature to mismatch. :D 
+
