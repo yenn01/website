@@ -1,13 +1,21 @@
 // src/routes/api/posts/+server.js
-import { fetchMarkdownPosts } from '$lib/utils';
+
+const address = 'VIiWGPtisvWkgI9mdtG8u7DmFZjVUKAlHoSqj9_ghXg';
+import { fetchMarkdownPosts, fetchArweavePosts } from '$lib/utils';
 import { json } from '@sveltejs/kit';
 
+/** @type {import('./$types').RequestHandler} */
 export const GET = async () => {
-	const allPosts = await fetchMarkdownPosts();
+	const gitPosts = await fetchMarkdownPosts();
+	const arPosts = await fetchArweavePosts(address);
 
-	const sortedPosts = allPosts.sort((a, b) => {
+	// Append gitPosts to arPosts
+	const posts = arPosts.concat(gitPosts);
+
+	// Sort posts by date
+	posts.sort((a, b) => {
 		return new Date(b.meta.date) - new Date(a.meta.date);
 	});
 
-	return json(sortedPosts);
+	return json(posts);
 };

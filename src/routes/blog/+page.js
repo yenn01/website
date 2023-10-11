@@ -1,16 +1,14 @@
 export const prerender = true;
+
+import { error } from '@sveltejs/kit';
+
 export const load = async ({ fetch, params }) => {
-	const { category } = params;
-	const response = await fetch(`/api/posts`);
-	const allPosts = await response.json();
-	if (category !== undefined) {
-		const posts = allPosts.filter((post) => post.meta.categories.includes(category));
-		return {
-			posts
-		};
-	} else {
-		return {
-			allPosts
-		};
+	try {
+		const response = await fetch(`/api/posts`);
+		const allPostIDs = await response.json();
+
+		return { posts: allPostIDs };
+	} catch (e) {
+		throw error(404, `Could not find post ${params.slug}`);
 	}
 };

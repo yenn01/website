@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
-	import Error from '../../+error.svelte';
+	import { convertEpochToDisplayDate, readingTime } from '$lib/utils';
 	import { verifyPost, digestMessage } from '$lib/utils/cryptoRelated.js';
 	import { stripHashAndDigest } from '$lib/utils';
 
@@ -12,16 +12,8 @@
 	$: verified = false;
 	$: sameDigest = false;
 	$: readingMinutes = 0;
-	let checkSignature;
 
 	const { cleanedRaw, signature, digest } = stripHashAndDigest(data.postRaw);
-
-	function readingTime(_text) {
-		const wpm = 225;
-		const words = _text.trim().split(/\s+/).length;
-		const time = Math.ceil(words / wpm);
-		return time;
-	}
 
 	onMount(async () => {
 		$store_showHeader = 9999;
@@ -55,7 +47,7 @@
 <article>
 	<hgroup>
 		<h1>{data.post.meta.title}</h1>
-		<p>Published on {data.post.meta.date}</p>
+		<p>Published on {convertEpochToDisplayDate(data.post.meta.date)}</p>
 		<div class="tags">
 			{#each data.post.meta.categories as category}
 				<span>&num;{category}</span>

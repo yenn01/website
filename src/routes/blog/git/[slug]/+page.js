@@ -3,10 +3,9 @@ export const prerender = 'auto';
 
 export async function load({ params }) {
 	try {
-		//console.log(params.slug);
-		const publicKey = await import(`../../../secrets/public.jwk?raw`);
-		const post = await import(`../../../posts/${params.slug}.md`);
-		const postRaw = await import(`../../../posts/${params.slug}.md?raw`);
+		const publicKey = await import(`../../../../secrets/public.jwk?raw`);
+		const post = await import(`../../../../posts/${params.slug}.md`);
+		const postRaw = await import(`../../../../posts/${params.slug}.md?raw`);
 		const fixCarriageReturn = postRaw.default.replace(/\r\n/g, '\n');
 
 		return {
