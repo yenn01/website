@@ -3,73 +3,53 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { store_showHeader, store_showHeaderLogo } from '$lib/stores/showHeader.js';
-	import Error from '../../+error.svelte';
-	import SvelteMarkdown from 'svelte-markdown';
-	import { digestMessage } from '$lib/utils/cryptoRelated.js';
-
-	import customHeading from '$lib/components/PostRenderer/customHeading.svelte';
+	import { convertEpochToDisplayDate, readingTime } from '$lib/utils';
+	import { verifyPost, digestMessage } from '$lib/utils/cryptoRelated.js';
+	import { stripHashAndDigest } from '$lib/utils';
 
 	export let data;
 
 	$: verified = false;
 	$: sameDigest = false;
 	$: readingMinutes = 0;
-	$: digest = '';
-	let checkSignature;
-	let source = '';
 
-	// const { cleanedRaw, signature, digest } = stripHashAndDigest(data.postRaw);
+	const { cleanedRaw, signature, digest } = stripHashAndDigest(data.postRaw);
 
-	function readingTime(_text) {
-		const wpm = 225;
-		const words = _text.trim().split(/\s+/).length;
-		const time = Math.ceil(words / wpm);
-		return time;
-	}
-	var utcSeconds = data.body.tags.ymooi_date / 1000;
-	let epochTime = new Date(0);
-	let dateOptions = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' };
-	epochTime.setUTCSeconds(utcSeconds);
-	const postedTime = epochTime.toLocaleDateString('en-US', dateOptions);
 	onMount(async () => {
 		$store_showHeader = 9999;
 		$store_showHeaderLogo = true;
-		source = data.body.data;
-		// Multiline string in javascript
-
-		// if (signature !== undefined) {
-		// 	const signatureBytes = base64js.toByteArray(signature).buffer;
-		// 	console.log(base64js.fromByteArray(new Uint8Array(signatureBytes)));
-		// 	verified = await verifyPost(data.key, signatureBytes, cleanedRaw);
-		// }
-
-		if (data.body.data !== undefined) {
-			digestMessage(data.body.data).then((digestHex) => {
-				digest = digestHex;
-			});
-			readingMinutes = readingTime(data.body.data);
+		if (signature !== undefined) {
+			const signatureBytes = base64js.toByteArray(signature).buffer;
+			console.log(base64js.fromByteArray(new Uint8Array(signatureBytes)));
+			verified = await verifyPost(data.key, signatureBytes, cleanedRaw);
 		}
-		// console.log(data);
-		// console.log();
+		if (digest !== undefined) {
+			digestMessage(cleanedRaw).then((digestHex) => {
+				sameDigest = digestHex == digest;
+			});
+		}
+		if (cleanedRaw !== undefined) {
+			readingMinutes = readingTime(cleanedRaw);
+		}
 	});
 </script>
 
 <svelte:head>
-	<!-- <title>{data.post.meta.title}</title> -->
+	<title>{data.post.meta.title}</title>
 	<meta property="og:type" content="article" />
 	<link
 		href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-okaidia.min.css"
 		rel="stylesheet"
 	/>
-	<!-- <meta property="og:title" content={data.post.meta.title} /> -->
+	<meta property="og:title" content={data.post.meta.title} />
 </svelte:head>
 
 <article>
 	<hgroup>
-		<h1>{data.body.tags.ymooi_title}</h1>
-		<p>Published on {postedTime}</p>
+		<h1>{data.post.meta.title}</h1>
+		<p>Published on {convertEpochToDisplayDate(data.post.meta.date)}</p>
 		<div class="tags">
-			{#each data.body.tags.ymooi_categories as category}
+			{#each data.post.meta.categories as category}
 				<span>&num;{category}</span>
 			{/each}
 		</div>
@@ -92,57 +72,37 @@
 	</hgroup>
 
 	<div class="post-content">
-		<!-- <svelte:component this={} /> -->
-		<SvelteMarkdown
-			{source}
-			renderers={{
-				heading: customHeading
-			}}
-		/>
+		<svelte:component this={data.post.content} />
 	</div>
 </article>
 
 <section class="container_cryptoStatus">
 	<h6>Cryptographic Information</h6>
-	<caption>Checksum </caption>
+
+	<caption transition:fade>
+		Signed -
+		{#if verified}
+			<span class="verified">Verified ✓</span>
+		{:else}
+			<span class="unverified">Unverified ✗</span>
+		{/if}
+	</caption>
+	<p>{signature}</p>
+
+	<caption
+		>Checksum -
+		{#if sameDigest}
+			<span class="verified">Matching ✓</span>
+		{:else}
+			<span class="unverified">Unmatching ✗</span>
+		{/if}
+	</caption>
 	<p>{digest}</p>
-	<caption>Transaction Information </caption>
-	<a href={`https://viewblock.io/arweave/tx/${data.body.tx_id}`} target="_blank"
-		><h4>
-			{data.body.tx_id}<svg
-				xmlns="http://www.w3.org/2000/svg"
-				width="16"
-				height="16"
-				fill="currentColor"
-				class="bi bi-box-arrow-up-right"
-				viewBox="0 0 16 16"
-			>
-				<path
-					fill-rule="evenodd"
-					d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-				/>
-				<path
-					fill-rule="evenodd"
-					d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-				/>
-			</svg>
-		</h4></a
-	>
+	<h4>{data.fileName}.md</h4>
+	<h6 />
 </section>
 
 <style>
-	.container_cryptoStatus a h4 {
-		margin-top: 0.1em;
-	}
-
-	.container_cryptoStatus a h4 {
-		color: var(--color-theme-1);
-	}
-
-	.container_cryptoStatus a h4 svg {
-		padding-left: 0.5em;
-	}
-
 	.unverified {
 		color: var(--color-theme-1);
 	}

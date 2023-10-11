@@ -2,9 +2,13 @@
 	import RecentPosts from '$lib/components/RecentPosts.svelte';
 
 	export let data;
-	console.log(data);
 </script>
 
+<svelte:head>
+	<title>YennM - Blog</title>
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Blog" />
+</svelte:head>
 <!-- ...Post HTML here -->
 <RecentPosts posts={data.posts} />
 
