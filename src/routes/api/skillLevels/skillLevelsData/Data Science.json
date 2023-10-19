@@ -3,9 +3,9 @@
         "skills":"Scikit-learn, Pandas, Jupyter Notebook, gspread, streamlit"
     },
     "2": {
-        "skills":"HuggingFace, Numpy, BeautifulSoup, pytesseract, Google Query Language"
+        "skills":"PostgreSQL, HuggingFace, Numpy, BeautifulSoup, pytesseract, Google Query Language, dbt core, Google BigQuery"
     },
     "1": {
-        "skills":"Seaborn, Matplotlib, opencv-python, apexcharts.js, jina"
+        "skills":"Seaborn, Matplotlib, opencv-python, apexcharts.js, jina, Google Looker, Apache Airflow, Jenkins"
     }
 }
